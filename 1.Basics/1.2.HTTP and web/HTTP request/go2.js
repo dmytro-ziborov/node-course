@@ -24,18 +24,17 @@ function readHttpLikeInput() {
 let contents = readHttpLikeInput();
 
 // вот эту функцию собственно надо написать
-
 function parseTcpStringAsHttpRequest(string) {
     return {
-        method: string.match(/\w+/)[0],
-        uri: string.match(/\/(\w*\/?)*/)[0],
+        method: string.match(/\w+/)[0].trim(),
+        uri: string.match(/\/(\/?\w*)*(\?(&?\w+=[\w\d,+]+)+)?/)[0].trim(),
         headers: string.match(/^.+:.+$/gm).reduce((accumulator, current) => {
             let header = current.split(':');
-            header[0] = header[0].toLowerCase().replace(/(?=\b)[a-z]/gm, (word) => word[0].toUpperCase())
+            header[0] = header[0].toLowerCase().replace(/(?=\b)[a-z]/gm, (word) => word[0].toUpperCase()).trim();
             accumulator[header[0]] = header[1].trim();
             return accumulator;
         }, {}),
-        body: string.match(/^(&?.*=.*)+$/gm).join()
+        body: string.match(/^(&?.*=.*)+$/gm).join().trim()
     }
 }
 
