@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- task 14 -->
+    <button id="topBtn" onclick="scrollToTop()">Go to top</button>
+    <!-- task 10,11,12 -->
+    <div class="upper-right-container">
+        <p id="mouse-coords"></p>
+        <p id="user-language"></p>
+        <p id="user-location"></p>
+    </div>
+    <div class="general">
+      <div class="container">
+        <!-- task 1 -->
+        <div class="item">
+          <h5>Hide with CSS</h5>
+          <div class="container1" id="hide01"></div>
+          <button onclick="hideByCSSProperty()">Hide</button>
+        </div>
+        <div class="item">
+          <h5>Hide with JS</h5>
+          <div class="container1" id="hide02"></div>
+          <button onclick="hideByJS()">Hide</button>
+        </div>
+        <div class="item">
+          <h5>Hide with class name</h5>
+          <div class="container1" id="hide03"></div>
+          <button onclick="changeClassName()">Hide</button>
+        </div>
+        <!-- task 2 -->
+        <div class="item">
+          <h5>Hide/Show</h5>
+          <div class="container1" id="hide04"></div>
+          <button id="hideBtn1" onclick="hideTwoWays()">Hide</button>
+        </div>
+      </div>
+      <!-- task 3 -->
+      <div class="container">
+        <div class="item">
+          <div class="container2"></div>
+        </div>
+        <div class="item">
+          <div class="container2"></div>
+        </div>
+        <div class="item">
+          <div class="container2"></div>
+        </div>
+        <div class="item">
+          <div class="container2"></div>
+        </div>
+        <div class="item">
+          <div class="container2"></div>
+        </div>
+      </div>
+      <button id="hideAllBtn" onclick="hideAllBtn()">Hide</button>
+      <!-- task 4 -->
+      <div class="container">
+        <div class="item">
+          <div class="container3"></div>
+        </div>
+        <div class="item">
+          <div class="container3"></div>
+        </div>
+        <div class="item">
+          <div class="container3"></div>
+        </div>
+        <div class="item">
+          <div class="container3"></div>
+        </div>
+        <div class="item">
+          <div class="container3"></div>
+        </div>
+      </div>
+      <div class="item">
+        <input type="text" id="css-selector" placeholder="Type Css-selector" />
+        <button onclick="setSelector()">Hide</button>
+      </div>
+      <!-- task 5 -->
+      <div class="item">
+        <div
+          class="yellow-container"
+          id="yellow-box"
+          onclick="proceedYellowContainer()"
+        ></div>
+      </div>
+      <!-- task 6 -->
+      <div class="item">
+          <button onmouseover="showRedBox()" onmouseout="hideRedBox()">hover me</button>
+          <div class="red-container" id="red-box"></div>
+      </div>
+      <!-- task 7 -->
+      <div class="item">
+        <div class="green-container" id="green-rect"></div>
+        <input type="text" id="hide-green" placeholder="Type to hide green rect" onfocus="showGreenRect()" onkeypress="hideGreenRect()" />
+      </div>
+      <!-- task 8 -->
+      <div class="item">
+        <img id="image-from-internet">
+        <input type="text" id="image-url-textbox" placeholder="Paste image url" />
+        <button onclick="getImageFromUrl()">Hide</button>
+      </div>
+      <!-- task 9 -->
+      <div class="item">
+        <div class="container" id="image-storage"></div>
+        <textarea name="image-urls-textArea" id="image-urls-textArea" cols="60" rows="10"></textarea>
+        <button onclick="getImagesFromWeb()">Hide</button>
+    </div>
+    <!-- task 13 -->
+    <div class="item">
+        <div class="container">
+            <div class="item">
+            <div class="editable-container" id="local-container" contenteditable="true" oninput="localChanged()">1</div>
+        </div>
+        <div class="item">
+            <div class="editable-container" id="cookies-container" contenteditable="true" oninput="cookieChanged()">2</div>
+        </div>
+        <div class="item">
+            <div class="editable-container" id="session-container" contenteditable="true" oninput="sessionChanged()">3</div>
+        </div>
+        </div>
+    </div>
+    <!-- task 15 -->
+    <div class="item">
+        <div id="outer-container" onclick="outerClick(event)">
+            <div id="inner-container"></div>
+        </div>
+    </div>
+    </div>
+      <!-- task 16 -->
+    <div class="item">
+        <button onclick="freeze()">Freez page</button>
+    </div>
+    <!-- task 17 -->
+    <div class="item">
+        <form><input type="submit" value="GO"></form>
+    </div>
+    <!-- task 18 -->
+    <div class="item">
+        <div class="drag-zone" id="drag-zone">
+            <p>Drag file or choose
+                <input type="file" name="file-upload" id="file-uploader" ondragenter="onDragOver(event)" ondragleave="onDragLeave(event)" >
+            </p>
+        </div>
+    </div>
+    <div class="freezer-container" id="freezer" onclick="unfreeze(event)"></div>
+  </body>
+
+  <script src="script.js"></script>
+</html>
