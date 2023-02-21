@@ -10,7 +10,6 @@ import db from "./database/db";
 
 const app: Express = express();
 
-app.use(express.static(path.join(__dirname, "public")));
 
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -21,5 +20,7 @@ app.use(logger);
 app.use("/api", MainRouter);
 
 db.connect();
+
+app.use(express.static(path.join(__dirname, "public")));
 
 export default app;
