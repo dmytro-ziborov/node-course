@@ -1,3 +1,4 @@
+import { CorsOptions } from "cors";
 import dotenv from "dotenv";
 import session from "express-session";
 import fileStore, { FileStore } from "session-file-store";
@@ -29,4 +30,7 @@ export const sessionOptions: session.SessionOptions = {
   },
 };
 
-//todo add other
+export const corsOptions: CorsOptions = {
+  origin:true,
+  credentials:true
+}
