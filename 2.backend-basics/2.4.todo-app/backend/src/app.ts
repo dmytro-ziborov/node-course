@@ -7,11 +7,11 @@ import cookieParser from "cookie-parser";
 import { corsOptions, sessionOptions } from "./utils/config";
 import session from "express-session";
 import db from "./database/db";
-import cors from 'cors';
+import cors from "cors";
 
 const app: Express = express();
 
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
@@ -22,6 +22,6 @@ app.use("/api", MainRouter);
 
 db.connect();
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "..", "public")));
 
 export default app;
